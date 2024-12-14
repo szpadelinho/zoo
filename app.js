@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000
 app.use(express.json());
 
 app.get("/animals", AnimalController.getAllAnimals)
-app.get("/animals/:id", AnimalController.getAnimalById)
+app.get("/animals/select/:id", AnimalController.getAnimalById)
 app.get("/animals/endangered", AnimalController.getEndangeredAnimals)
 app.get("/animals/habitat/:habitat", AnimalController.getAnimalsByHabitat)
 app.get("/animals/species/:species", AnimalController.getAnimalsBySpecies)

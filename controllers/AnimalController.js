@@ -25,7 +25,6 @@ export const getEndangeredAnimals = async (req, res) => {
     console.log("Loading endangeredAnimals from animalController.js")
     try{
         const animals = await AnimalService.getEndangeredAnimals()
-        console.log("Zwierzęta to: " + animals)
         res.json(animals)
     }
     catch (err) {

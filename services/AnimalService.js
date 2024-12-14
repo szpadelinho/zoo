@@ -38,7 +38,7 @@ export const getAnimalById = async (id) => {
         return animals.find((animal) => animal.id === id)
     }
     catch(err){
-        throw new Error("Failed to load data in animalService.js (getAnimalById function): " + err.message)
+        throw new Error("Failed to load data in AnimalService.js (getAnimalById function): " + err.message)
     }
 }
 
@@ -46,11 +46,10 @@ export const getEndangeredAnimals = async () => {
     console.log("Loading endangered animals from animalController.js")
     try{
         const animals = await loadData()
-        console.log("Zwierzęta to: " + animals)
-        return animals.filter((animal) => animal.isEndangered)
+        return animals.filter(animal => animal.isEndangered === true)
     }
     catch(err){
-        throw new Error("Failed to load data in animalService.js (getEndangeredAnimals function): " + err.message)
+        throw new Error("Failed to load data in AnimalService.js (getEndangeredAnimals function): " + err.message)
     }
 }
 
@@ -60,7 +59,7 @@ export const getAnimalsByHabitat = async (habitat) => {
         return animals.filter(animal => animal.habitat.toLowerCase() === habitat.toLowerCase())
     }
     catch(err){
-        throw new Error("Failed to load data in animalService.js (getAnimalsByHabitat function): " + err.message)
+        throw new Error("Failed to load data in AnimalService.js (getAnimalsByHabitat function): " + err.message)
     }
 }
 
@@ -70,7 +69,7 @@ export const getAnimalsBySpecies = async (species) => {
         return animals.filter(animal => animal.species.toLowerCase() === species.toLowerCase())
     }
     catch(err){
-        throw new Error("Failed to load data in animalService.js (getAnimalsBySpecies function): " + err.message)
+        throw new Error("Failed to load data in AnimalService.js (getAnimalsBySpecies function): " + err.message)
     }
 }
 
