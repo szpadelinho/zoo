@@ -5,7 +5,7 @@ GET http://localhost:3000/animals
 GET http://localhost:3000/animals/1
 
 ### GET ALL ENDANGERED ANIMALS
-GET http://localhost:3000/endangered
+GET http://localhost:3000/animals/endangered
 
 ### GET ANIMALS BY HABITAT
 GET http://localhost:3000/animals/habitat/Savanna

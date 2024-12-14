@@ -1,19 +1,17 @@
 import express from 'express'
-const AnimalController = require('./controllers/AnimalController')
+import * as AnimalController from './controllers/AnimalController.js'
 
 const app = express()
 
 const port = process.env.PORT || 3000
 
-app.get("/", (req, res) => {
-    res.send("Serwer prawidłowo działa.")
-})
+app.use(express.json());
 
 app.get("/animals", AnimalController.getAllAnimals)
 app.get("/animals/:id", AnimalController.getAnimalById)
 app.get("/animals/endangered", AnimalController.getEndangeredAnimals)
-app.get("/animals/:habitat", AnimalController.getAnimalsByHabitat)
-app.get("/animals/:species", AnimalController.getAnimalsBySpecies)
+app.get("/animals/habitat/:habitat", AnimalController.getAnimalsByHabitat)
+app.get("/animals/species/:species", AnimalController.getAnimalsBySpecies)
 app.post("/animals", AnimalController.addAnimal)
 app.put("/animals/:id", AnimalController.updateAnimal)
 app.delete("/animals/:id", AnimalController.deleteAnimal)
