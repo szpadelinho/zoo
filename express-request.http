@@ -1,0 +1,37 @@
+### GET ALL ANIMALS
+GET http://localhost:3000/animals
+
+### GET ANIMAL BY ID
+GET http://localhost:3000/animals/1
+
+### GET ALL ENDANGERED ANIMALS
+GET http://localhost:3000/endangered
+
+### GET ANIMALS BY HABITAT
+GET http://localhost:3000/animals/habitat/Savanna
+
+### GET ANIMALS BY SPECIES
+GET http://localhost:3000/animals/species/Lew
+
+### ADD NEW ANIMAL
+POST http://localhost:3000/animals
+Content-Type: application/json
+
+{
+  "name": "Dory",
+  "species": "Ryba",
+  "age": 7,
+  "isEndangered": true,
+  "habitat": "Ocean"
+}
+
+### UPDATE AN ANIMAL
+PUT http://localhost:3000/animals/2
+Content-Type: application/json
+
+{
+  "age": 99
+}
+
+### DELETE AN ANIMAL
+DELETE http://localhost:3000/animals/3
